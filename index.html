@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Random</title>
+  </head>
+  <body>
+    <div class="py-5 text-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newRoll" onclick="Roll()">
+        Roll a dice!
+      </button>
+      <div class="modal fade" id="newRoll" tabindex="-1" role="dialog" aria-labelledby="newRollLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newRollLabel">New Roll</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <h1 id="output">3</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script>
+      function Roll() {
+        const random = Math.floor(Math.random() * 12) + 1;
+        document.getElementById('output').innerHTML = random;
+      }
+    </script>
+  </body>
+</html>
