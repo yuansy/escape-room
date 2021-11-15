@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Puzzle 2 Living Romm</title>
+  </head>
+  <body>
+    <div class="py-5 text-center">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputPassword1">鲨鲨最喜欢看的<b><u>卡通</u></b>是什么？</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="卡通英文名称">
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newRoll" onclick="Roll()">
+          提交
+        </button>
+      </form>
+      <div class="modal fade" id="newRoll" tabindex="-1" role="dialog" aria-labelledby="newRollLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newRollLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div id = "correct answer">
+                  <h3>答对了！通往入口的路已解开。</h3>
+                  <br/><br/>
+                  <p>绑匪提示 #2</p>
+                  <img src='images/living.jpg' width="400"></img>
+                </div>
+                <div id = "wrong answer">
+                  <h3>错误!</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script>
+      function Roll() {
+        var pwd = document.getElementById('exampleInputPassword1').value;
+        pwd = pwd.trim().toLowerCase();
+        if (pwd.toLowerCase() === "findingdory" || pwd.toLowerCase() === "finding dory") {
+          document.getElementById('correct answer').style.display = "block";
+          document.getElementById('wrong answer').style.display = "none";
+        } else {
+          document.getElementById('correct answer').style.display = "none";
+          document.getElementById('wrong answer').style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
